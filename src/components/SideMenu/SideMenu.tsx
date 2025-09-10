@@ -17,6 +17,7 @@ import { MdPayment } from "react-icons/md";
 interface MenuProps {
   folder: string;
   roots: string[];
+  slug: string;
 }
 
 const images = [
@@ -62,7 +63,9 @@ const SideMenu = ({ folder, roots }: MenuProps) => {
           isMenuOpen ? "block mt-7" : "hidden md:block"
         }`}
       >
-        <h1 className="text-4xl font-bold mb-6"> {fold}: </h1>
+        {/* <h2 className="text-4xl font-bold mb-6">
+          {fold}:
+        </h2> */}
 
         <div>
           <ul>
@@ -81,7 +84,9 @@ const SideMenu = ({ folder, roots }: MenuProps) => {
                   >
                     <div className={`flex items-center space-x-4`}>
                       <div className="flex-shrink-0">
-                        <Icon icon={matchIcons(fold, getName(item)) ?? FileIcon} />
+                        <Icon
+                          icon={matchIcons(fold, getName(item)) ?? FileIcon}
+                        />
                       </div>
                       <div className="flex-1 min-w-0">
                         <p className="text-sm font-medium ">
