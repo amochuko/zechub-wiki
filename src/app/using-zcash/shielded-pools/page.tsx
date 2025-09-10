@@ -37,6 +37,7 @@ export default async function Page(props: {
 
   return (
     <MdxContainer
+      slug={slug}
       hasSideMenu={true}
       sideMenu={<SideMenu folder={urlRoot} roots={roots} />}
       roots={roots}
