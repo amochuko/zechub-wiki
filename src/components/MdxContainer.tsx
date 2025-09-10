@@ -36,7 +36,7 @@ export default async function MdxContainer({
           height={heroImage?.height || 50}
           src={heroImage?.src != undefined ? heroImage.src : defaultImgSource}
         /> */}
-        {root.length > 0 && path && (
+        {root && root.length > 0 && path && (
           <h1 className="text-4xl text-center font-medium my-24 capitalize">
             {removeDashFromWord(root)} - {removeDashFromWord(path)}
           </h1>
