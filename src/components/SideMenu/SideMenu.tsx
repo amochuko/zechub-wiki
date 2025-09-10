@@ -17,7 +17,6 @@ import { MdPayment } from "react-icons/md";
 interface MenuProps {
   folder: string;
   roots: string[];
-  slug: string;
 }
 
 const images = [

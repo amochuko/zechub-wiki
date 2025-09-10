@@ -65,7 +65,6 @@ export default async function Page(props: {
             <SideMenu
               folder={slug[0]}
               roots={roots}
-              slug={slug[1].replace(/-/g, " ")}
             />
           ) : null
         }
