@@ -1,6 +1,6 @@
 type MdxContainerProps = {
   roots: any;
-  slug: string;
+  slug?: string;
   sideMenu: React.ReactNode;
   children: React.ReactNode;
   hasSideMenu: boolean;
@@ -13,7 +13,7 @@ type MdxContainerProps = {
 
 const defaultImgSource = "/wiki-banner.avif";
 function removeDashFromWord(word: string) {
-  return word.replace(/-/g, " ");
+  return word ? word.replace(/-/g, " ") : "";
 }
 
 export default async function MdxContainer({
@@ -24,7 +24,7 @@ export default async function MdxContainer({
   children,
   slug,
 }: MdxContainerProps) {
-  const [root, path] = Array.from(slug);
+  const [root, path] = Array.from(slug ?? "");
 
   return (
     <main>
@@ -36,10 +36,11 @@ export default async function MdxContainer({
           height={heroImage?.height || 50}
           src={heroImage?.src != undefined ? heroImage.src : defaultImgSource}
         /> */}
-
-        <h1 className="text-4xl text-center font-medium my-24 capitalize">
-          {removeDashFromWord(root)} - {removeDashFromWord(path)}
-        </h1>
+        {root.length > 0 && path && (
+          <h1 className="text-4xl text-center font-medium my-24 capitalize">
+            {removeDashFromWord(root)} - {removeDashFromWord(path)}
+          </h1>
+        )}
       </div>
 
       <div
